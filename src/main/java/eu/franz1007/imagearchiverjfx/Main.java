@@ -22,6 +22,7 @@ public class Main extends Application {
 
     private final ImageArchiver imageArchiver = new ImageArchiver();
 
+    private final DirPane dirPane = new DirPane(imageArchiver);
 
     public static void main(String[] args) {
         ImageArchiver imageArchiver = new ImageArchiver();
@@ -53,13 +54,14 @@ public class Main extends Application {
                         System.out.println("Started importing");
                         imageArchiver.importDirectory(f);
                         System.out.println("Finished importing");
+                        dirPane.updateItems();
                     }
                 });
                 t.start();
                 t.interrupt();
             }
         });
-        root.setCenter(new DirPane(imageArchiver));
+        root.setCenter(dirPane);
         root.setTop(importButton);
         importButton.getStyleClass().add(JMetroStyleClass.LIGHT_BUTTONS);
 
