@@ -2,19 +2,10 @@ package eu.franz1007.imagearchiverjfx;
 
 
 import eu.franz1007.imagearchiver.ImageArchiver;
-import eu.franz1007.imagearchiver.containers.FilePathsStruct;
 import eu.franz1007.imagearchiverjfx.guicomponents.DirPane;
-import eu.franz1007.imagearchiverjfx.guicomponents.tableData.DirViewData;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseButton;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
@@ -23,7 +14,6 @@ import jfxtras.styles.jmetro.JMetroStyleClass;
 import jfxtras.styles.jmetro.Style;
 
 import java.io.File;
-import java.util.List;
 
 public class Main extends Application {
 

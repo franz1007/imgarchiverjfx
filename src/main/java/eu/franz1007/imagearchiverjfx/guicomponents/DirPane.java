@@ -23,7 +23,7 @@ public class DirPane extends BorderPane {
 
     String selectedDir = "";
 
-    private TableView<DirViewData> center = new TableView<>();
+    private final TableView<DirViewData> center = new TableView<>();
 
     {
         Button dirUp = new Button("→");
