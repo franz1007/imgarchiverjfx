@@ -38,7 +38,6 @@ public class Main extends Application {
         BorderPane root = new BorderPane();
         Scene scene = new Scene(root);
 
-
         imageArchiver.setOutDir(new File("outdir"));
         currentOutDir = new File("outdir");
         root.getStyleClass().add(JMetroStyleClass.BACKGROUND);
@@ -49,14 +48,11 @@ public class Main extends Application {
             File f = dirChooser.showDialog(scene.getWindow());
             System.out.println(f);
             if (f != null) {
-                Thread t = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        synchronized (mutex) {
-                            System.out.println("Started importing");
-                            imageArchiver.importDirectory(f);
-                            System.out.println("Finished importing");
-                        }
+                Thread t = new Thread(() -> {
+                    synchronized (mutex) {
+                        System.out.println("Started importing");
+                        imageArchiver.importDirectory(f);
+                        System.out.println("Finished importing");
                     }
                 });
                 t.start();

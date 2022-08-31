@@ -36,10 +36,13 @@ public class DirPane extends BorderPane {
         TableColumn<DirViewData, String> nameColumn = new TableColumn<>("Directory");
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("displayFile"));
         nameColumn.setPrefWidth(300);
-        TableColumn<DirViewData, String> countColumn = new TableColumn<>("Type");
+        TableColumn<DirViewData, String> countColumn = new TableColumn<>();
         countColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         countColumn.setPrefWidth(150);
+        TableColumn<DirViewData, String> typeColumn = new TableColumn<>("Type");
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         center.getColumns().add(nameColumn);
+        center.getColumns().add(typeColumn);
         center.getColumns().add(countColumn);
         center.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         center.setOnMouseClicked(e -> {
@@ -72,7 +75,7 @@ public class DirPane extends BorderPane {
     private void updateItems() {
         ObservableList<DirViewData> list = FXCollections.observableList(
                 imageArchiver.getIndexMap().values()
-                        .stream()
+                        .parallelStream()
                         .map(FilePathsStruct::getRelativeStoragePath)
                         .filter(path -> path.startsWith(selectedDir))
                         .map(str -> {
@@ -83,9 +86,11 @@ public class DirPane extends BorderPane {
                             }
                         }).distinct().map(str -> {
                             if (str.endsWith("/")) {
-                                return new DirViewData(str, "directory");
+                                long amount = imageArchiver.getIndexMap().values()
+                                        .parallelStream().filter(fps -> fps.getRelativeStoragePath().startsWith(str)).count();
+                                return new DirViewData(str, "directory", Long.toString(amount));
                             } else {
-                                return new DirViewData(str, "file");
+                                return new DirViewData(str, "file", "");
                             }
                         }).toList()
         );
