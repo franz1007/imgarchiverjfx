@@ -10,18 +10,20 @@ public class DirViewData {
 
     public String file;
 
+    public StringProperty type;
+
     public boolean isDirectory;
 
-    public DirViewData(String file, String amount){
+    public DirViewData(String file, String type, String amount) {
         this.isDirectory = file.endsWith("/");
-        if(isDirectory) {
-            this.displayFile = new SimpleStringProperty(file.substring(file.lastIndexOf('/', file.length()-2) + 1, file.length()-1));
-        }
-        else{
+        if (isDirectory) {
+            this.displayFile = new SimpleStringProperty(file.substring(file.lastIndexOf('/', file.length() - 2) + 1, file.length() - 1));
+        } else {
             this.displayFile = new SimpleStringProperty(file.substring(file.lastIndexOf('/') + 1));
         }
         this.amount = new SimpleStringProperty(amount);
-        this.file=file;
+        this.file = file;
+        this.type = new SimpleStringProperty(type);
     }
 
 
@@ -41,5 +43,12 @@ public class DirViewData {
         return amount;
     }
 
+    public String getType() {
+        return type.get();
+    }
+
+    public StringProperty typeProperty() {
+        return type;
+    }
 
 }
