@@ -71,16 +71,18 @@ public class DirPane extends BorderPane {
 
     private void chooseOutDir() {
         DirectoryChooser dirChooser = new DirectoryChooser();
-        dirChooser.setInitialDirectory(imageArchiver.getOutDir());
+        if (imageArchiver.getOutDir().exists()) {
+            dirChooser.setInitialDirectory(imageArchiver.getOutDir());
+        }
         File dir = dirChooser.showDialog(this.getScene().getWindow());
         if (dir != null) imageArchiver.setOutDir(dir);
         outdirLabel.setText("Output Directory: " + imageArchiver.getOutDir().toPath().toAbsolutePath());
         this.setCenter(new Label("Loading..."));
-        Thread t = new Thread(()->{
-            synchronized (mutex){
-                Platform.runLater(()->setCenter(new Label("Loading...")));
+        Thread t = new Thread(() -> {
+            synchronized (mutex) {
+                Platform.runLater(() -> setCenter(new Label("Loading...")));
                 updateItems();
-                Platform.runLater(()->setCenter(center));
+                Platform.runLater(() -> setCenter(center));
             }
         });
         t.start();
