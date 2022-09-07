@@ -3,7 +3,6 @@ package eu.franz1007.imagearchiverjfx.guicomponents;
 import eu.franz1007.imagearchiver.ImageArchiver;
 import eu.franz1007.imagearchiver.containers.FilePathsStruct;
 import eu.franz1007.imagearchiverjfx.guicomponents.tableData.DirViewData;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
