@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies{
-    implementation("eu.franz1007:bilderarchivierung:1.1.6-SNAPSHOT")
+    implementation("eu.franz1007:bilderarchivierung:1.1.9-SNAPSHOT")
     implementation("org.jfxtras:jmetro:11.6.15")
     implementation("org.projectlombok:lombok:1.18.24")
     annotationProcessor("org.projectlombok:lombok:1.18.24")

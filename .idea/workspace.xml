@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a9482-604a-4d0c-bcf1-691f0f03572f" name="Changes" comment="Added feature to show the amount of files in directories">
+    <list default="true" id="069a9482-604a-4d0c-bcf1-691f0f03572f" name="Changes" comment="Added feature to change the output directory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/guicomponents/DirPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/guicomponents/DirPane.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,6 +152,7 @@
       <workItem from="1661972734434" duration="4736000" />
       <workItem from="1662407060258" duration="5690000" />
       <workItem from="1662585036890" duration="278000" />
+      <workItem from="1662759340333" duration="1774000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1661863883723</created>

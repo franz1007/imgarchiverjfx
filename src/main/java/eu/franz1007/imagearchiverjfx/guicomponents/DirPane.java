@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import jfxtras.styles.jmetro.JMetroStyleClass;
 
@@ -27,7 +28,9 @@ public class DirPane extends BorderPane {
     String selectedDir = "";
 
     private final Button outdirLabel;
+
     private final TableView<DirViewData> center = new TableView<>();
+
 
     {
         Button dirUp = new Button("→");
@@ -46,6 +49,8 @@ public class DirPane extends BorderPane {
         BorderPane top = new BorderPane();
         top.setLeft(topLeft);
         top.setRight(topRight);
+        center.prefHeightProperty().bind(center.heightProperty());
+        center.prefWidthProperty().bind(center.widthProperty());
         TableColumn<DirViewData, String> nameColumn = new TableColumn<>("Directory");
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("displayFile"));
         nameColumn.setPrefWidth(300);
@@ -57,13 +62,15 @@ public class DirPane extends BorderPane {
         center.getColumns().add(nameColumn);
         center.getColumns().add(typeColumn);
         center.getColumns().add(countColumn);
-        center.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        center.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         center.setOnMouseClicked(e -> {
             if (e.getButton().equals(MouseButton.PRIMARY) && e.getClickCount() == 2) {
                 selectDir(false);
             }
         });
         center.getStyleClass().add(JMetroStyleClass.ALTERNATING_ROW_COLORS);
+        ContextMenu centerMenu = new ContextMenu();
+        center.setContextMenu(centerMenu);
         this.setTop(top);
         this.setCenter(center);
     }
