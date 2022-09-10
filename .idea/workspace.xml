@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a9482-604a-4d0c-bcf1-691f0f03572f" name="Changes" comment="Added feature to change the output directory">
+    <list default="true" id="069a9482-604a-4d0c-bcf1-691f0f03572f" name="Changes" comment="ContextMenu for tableview added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/guicomponents/DirPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/guicomponents/DirPane.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +151,9 @@
       <workItem from="1661972734434" duration="4736000" />
       <workItem from="1662407060258" duration="5690000" />
       <workItem from="1662585036890" duration="278000" />
-      <workItem from="1662759340333" duration="1774000" />
+      <workItem from="1662759340333" duration="1819000" />
+      <workItem from="1662763240749" duration="1944000" />
+      <workItem from="1662846925807" duration="672000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1661863883723</created>
@@ -168,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661975311873</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ContextMenu for tableview added">
+      <created>1662761147974</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662761147974</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +197,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Added feature to show the amount of files in directories" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added feature to show the amount of files in directories" />
+    <MESSAGE value="ContextMenu for tableview added" />
+    <option name="LAST_COMMIT_MESSAGE" value="ContextMenu for tableview added" />
   </component>
 </project>

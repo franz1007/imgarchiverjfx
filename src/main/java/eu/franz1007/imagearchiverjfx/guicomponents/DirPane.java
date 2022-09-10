@@ -4,6 +4,8 @@ import eu.franz1007.imagearchiver.ImageArchiver;
 import eu.franz1007.imagearchiver.containers.FilePathsStruct;
 import eu.franz1007.imagearchiverjfx.guicomponents.tableData.DirViewData;
 import javafx.application.Platform;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
@@ -13,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
+import javafx.util.Callback;
 import jfxtras.styles.jmetro.JMetroStyleClass;
 
 import java.io.File;
@@ -29,7 +32,7 @@ public class DirPane extends BorderPane {
 
     private final Button outdirLabel;
 
-    private final TableView<DirViewData> center = new TableView<>();
+    private final TableView<FilePathsStruct> center = new TableView<>();
 
 
     {
@@ -51,13 +54,22 @@ public class DirPane extends BorderPane {
         top.setRight(topRight);
         center.prefHeightProperty().bind(center.heightProperty());
         center.prefWidthProperty().bind(center.widthProperty());
-        TableColumn<DirViewData, String> nameColumn = new TableColumn<>("Directory");
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("displayFile"));
+        TableColumn<FilePathsStruct, String> nameColumn = new TableColumn<>("Directory");
+        nameColumn.setCellValueFactory(item -> {
+            String str = item.getValue().getRelativeStoragePath();
+            if (str.substring(selectedDir.length()).contains("/")) {
+                return new SimpleStringProperty(str.substring(0, str.indexOf('/', selectedDir.length()) + 1));
+            } else {
+                return new SimpleStringProperty(str);
+            }
+        });
         nameColumn.setPrefWidth(300);
-        TableColumn<DirViewData, String> countColumn = new TableColumn<>();
-        countColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        TableColumn<FilePathsStruct, String> countColumn = new TableColumn<>();
+        countColumn.setCellValueFactory(item->{
+
+        });
         countColumn.setPrefWidth(150);
-        TableColumn<DirViewData, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<FilePathsStruct, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         center.getColumns().add(nameColumn);
         center.getColumns().add(typeColumn);
@@ -69,7 +81,9 @@ public class DirPane extends BorderPane {
             }
         });
         center.getStyleClass().add(JMetroStyleClass.ALTERNATING_ROW_COLORS);
-        ContextMenu centerMenu = new ContextMenu();
+        MenuItem copyItem = new MenuItem("copy");
+        MenuItem pasteItem = new MenuItem("paste");
+        ContextMenu centerMenu = new ContextMenu(copyItem, pasteItem);
         center.setContextMenu(centerMenu);
         this.setTop(top);
         this.setCenter(center);
@@ -133,7 +147,14 @@ public class DirPane extends BorderPane {
                             }
                         }).sorted(Comparator.comparing(DirViewData::getDisplayFile)).toList()
         );
-        center.setItems(list);
+        ObservableList<FilePathsStruct> list2 = FXCollections.observableList(
+                imageArchiver.getIndexMap().values()
+                        .parallelStream()
+                        .filter(fps->fps.getRelativeStoragePath().startsWith(selectedDir))
+                        //Directories in indexMap required to show them as well
+                        .toList()
+        );
+        center.setItems(list2);
     }
 
     public DirPane(ImageArchiver imageArchiver) {
