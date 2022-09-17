@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a9482-604a-4d0c-bcf1-691f0f03572f" name="Changes" comment="Added feature to show the amount of files in directories">
+    <list default="true" id="069a9482-604a-4d0c-bcf1-691f0f03572f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/guicomponents/DirPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/guicomponents/DirPane.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +152,7 @@
       <workItem from="1661862464263" duration="2080000" />
       <workItem from="1661972734434" duration="4736000" />
       <workItem from="1662407060258" duration="5690000" />
-      <workItem from="1662585036890" duration="278000" />
+      <workItem from="1662585036890" duration="5562000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1661863883723</created>
@@ -166,7 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661975311873</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Bugfix">
+      <created>1662585340177</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662585340177</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Bugfix">
+      <created>1662585360396</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662585360396</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +203,53 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Added feature to show the amount of files in directories" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added feature to show the amount of files in directories" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/franz1007/imagearchiverjfx/Main.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

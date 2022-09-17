@@ -27,6 +27,8 @@ public class DirPane extends BorderPane {
     String selectedDir = "";
 
     private final Button outdirLabel;
+
+
     private final TableView<DirViewData> center = new TableView<>();
 
     {
@@ -46,6 +48,7 @@ public class DirPane extends BorderPane {
         BorderPane top = new BorderPane();
         top.setLeft(topLeft);
         top.setRight(topRight);
+
         TableColumn<DirViewData, String> nameColumn = new TableColumn<>("Directory");
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("displayFile"));
         nameColumn.setPrefWidth(300);
@@ -64,6 +67,9 @@ public class DirPane extends BorderPane {
             }
         });
         center.getStyleClass().add(JMetroStyleClass.ALTERNATING_ROW_COLORS);
+
+
+
         this.setTop(top);
         this.setCenter(center);
     }
